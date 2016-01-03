@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="${title}">Invoice Manager</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- prba -->
+<link rel="stylesheet" th:href="@{/css/jquery.dataTables.css}"
+	href="../../css/jquery.dataTables.css" />
+	
+<script src="../../js/jquery.js"></script>
+<script src="../../js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript"  class="init">
+
+
+$(document).ready(function() {
+	$('#data_Table').DataTable({
+		
+	});
+} );
+
+
+	</script>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="#"> Invoice -
+					Manager </a> <span th:text="${user}"></span>
+				<ul class="nav">
+				<!-- 	<li><a th:href="@{/}" href="home.html"> Home </a></li> -->
+					<li><a th:href="@{/logout}" href="logout"> Logout </a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+	<table  id="data_Table" class="display" style="text-align: left;"  >
+	<thead>
+      <tr>
+        <th>Id</th>
+        <th>Purpose</th>
+        <th>Creation time</th>
+        <th>User</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="invoice,iterationStatus  : ${invoices}">
+    <!--     <td th:text="${iterationStatus.count}">1</td> -->
+        <td th:text="${invoice.id}">001</td>
+        <td th:text="${invoice.svrha_unosa}"></td>
+        <td th:text="${invoice.date_time}"></td>
+            <td th:text="${invoice.user_name}"></td>
+      </tr>
+      </tbody>
+    </table>
+	
+	<a class="btn btn-primary" th:href="@{/invoice/new}">Claim new</a>
+		</div>
+	</div>
+</body>
+</html>
