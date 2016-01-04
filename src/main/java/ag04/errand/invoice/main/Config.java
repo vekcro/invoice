@@ -20,9 +20,9 @@ public class Config extends WebMvcConfigurerAdapter {
  public DriverManagerDataSource dataSource() {
      DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
      driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-     driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/invoice?useUnicode=yes&characterEncoding=UTF-8");
-     driverManagerDataSource.setUsername("root");
-     driverManagerDataSource.setPassword("");
+     driverManagerDataSource.setUrl("jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_cc915c042a3814f?reconnect=true&useUnicode=yes&characterEncoding=UTF-8");
+     driverManagerDataSource.setUsername("ba5ab936b9a42b");
+     driverManagerDataSource.setPassword("54e3415841bdbc5");
      return driverManagerDataSource;
  }
 
