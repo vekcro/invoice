@@ -27,7 +27,7 @@ public void setId(long l) {
 
 @Column(name="date_time")
 String date_time;
-@Size(min=32, message="* Minimum size is 32 characters")
+@Size(min=32,max=255, message="* Minimum size is 32 characters, maximum 255")
 String svrha_unosa;
 public void setSvrha_unosa(String svrha_unosa) {
 	this.svrha_unosa = svrha_unosa;

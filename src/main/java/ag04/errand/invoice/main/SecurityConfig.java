@@ -52,7 +52,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 		
 	  http.authorizeRequests()
-.antMatchers("/invoice*").access("hasRole('ROLE_USERS')")
+.antMatchers("/invoice/*").access("hasRole('ROLE_USERS')")
+.antMatchers("/invoice").access("hasRole('ROLE_USERS')")
 .anyRequest().permitAll()
 .and()
   .formLogin().loginPage("/login")
